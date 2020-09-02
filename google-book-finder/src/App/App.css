@@ -1,0 +1,16 @@
+.app {
+  text-align: center;
+  position: relative;
+  height: 100%;
+}
+
+.h1 {
+  color: white;
+  background: tomato;
+  width: 800px;
+  text-align: center;
+  padding: 30px;
+  margin: auto;
+  /* display: flex;
+  justify-content: center; */
+}
