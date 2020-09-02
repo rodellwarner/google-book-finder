@@ -23,7 +23,7 @@ class SearchBar extends Component {
     const options = {
       method: "GET",
       headers: {
-        Authorization: "AIzaSyBdDX-dj38R1mz5nYD3eCLNTjzp2g90o8E",
+        Authorization: "AIzaSyAMuao1Ge-4E2QutggkznS4qB14zjq2Zf0",
         "Content-type": "application/json",
       },
     };
