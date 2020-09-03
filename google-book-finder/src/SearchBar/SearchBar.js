@@ -17,6 +17,7 @@ class SearchBar extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
     const url =
       "https://www.googleapis.com/books/v1/volumes?q=" +
       `${this.state.searchTerm}`;
@@ -28,15 +29,12 @@ class SearchBar extends Component {
       },
     };
 
-    console.log("URL: ", url);
-
     fetch(url, options)
       .then((results) => results.json())
-      .then((resultsJSON) => console.log(resultsJSON));
+      .then((resultsJSON) => this.props.handleSearchResults(resultsJSON));
   }
 
   render() {
-    console.log("SearchTerm: ", this.state.searchTerm);
     return (
       <div className="searchBar">
         <form className="searchForm" onSubmit={(e) => this.handleSubmit(e)}>
