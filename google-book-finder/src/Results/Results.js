@@ -1,15 +1,18 @@
 import React, { Component } from "react";
 import "./Results.css";
+import Volume from "../Volume/Volume";
 
 class Results extends Component {
   render() {
-    //Why can't I access the array in this.props.results.items
-    //to get, for example:
-    // console.log(this.props.results.items[8].volumeInfo.title);
+    this.props.results.map((item, index) =>
+      console.log("Item: ", item, "Index :", index)
+    );
 
-    console.log("Items Array: ", this.props.results.items);
+    const restultsToDisplay = this.props.results.map((item, index) => (
+      <Volume key={index} item={item} />
+    ));
 
-    return <div className="results"></div>;
+    return <div className="results">{restultsToDisplay}</div>;
   }
 }
 

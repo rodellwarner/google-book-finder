@@ -31,7 +31,8 @@ class SearchBar extends Component {
 
     fetch(url, options)
       .then((results) => results.json())
-      .then((resultsJSON) => this.props.handleSearchResults(resultsJSON));
+      .then((resultsJSON) => this.props.handleSearchResults(resultsJSON.items));
+    // .then((resultsJSON) => console.log(resultsJSON.items));
   }
 
   render() {

@@ -8,7 +8,7 @@
 #submitButton {
   border-radius: 5px;
   border: none;
-  height: 20px;
+  font-size: 14pt;
 }
 
 #searchInput {
@@ -17,9 +17,11 @@
   margin-right: 20px;
   width: 400px;
   height: 20px;
+  font-size: 14pt;
 }
 
 #searchInputLabel {
   color: white;
   margin-right: 20px;
+  font-size: 14pt;
 }

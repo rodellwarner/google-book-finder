@@ -7,13 +7,13 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchResults: {},
+      itemsArray: [],
     };
   }
 
   updateSearchResults(newResults) {
     this.setState({
-      searchResults: newResults,
+      itemsArray: newResults,
     });
   }
 
@@ -26,7 +26,7 @@ class App extends Component {
             this.updateSearchResults(resultsFromSearchBar)
           }
         />
-        <Results results={this.state.searchResults} />
+        <Results results={this.state.itemsArray} />
       </div>
     );
   }
