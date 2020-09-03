@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Results.css";
-import Volume from "../Volume/Volume";
+import ListOfVolumes from "../ListOfVolumes/ListOfVolumes";
 
 class Results extends Component {
   render() {
@@ -8,9 +8,7 @@ class Results extends Component {
       console.log("Item: ", item, "Index :", index)
     );
 
-    const restultsToDisplay = this.props.results.map((item, index) => (
-      <Volume key={index} item={item} />
-    ));
+    const restultsToDisplay = <ListOfVolumes results={this.props.results} />;
 
     return <div className="results">{restultsToDisplay}</div>;
   }
