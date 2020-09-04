@@ -32,7 +32,6 @@ class SearchBar extends Component {
     fetch(url, options)
       .then((results) => results.json())
       .then((resultsJSON) => this.props.handleSearchResults(resultsJSON.items));
-    // .then((resultsJSON) => console.log(resultsJSON.items));
   }
 
   render() {
@@ -48,6 +47,7 @@ class SearchBar extends Component {
             id="searchInput"
             placeholder="e.g. One Hundred Years Of Solitude"
             onChange={(e) => this.searchTermChanged(e.target.value)}
+            required="required"
           ></input>
           <button type="Submit" id="submitButton">
             Search

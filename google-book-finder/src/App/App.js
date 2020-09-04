@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <h1 className="h1">Google Book Search</h1>
+        <h1 className="h1">Search Google Books</h1>
         <SearchBar
           handleSearchResults={(resultsFromSearchBar) =>
             this.updateSearchResults(resultsFromSearchBar)
