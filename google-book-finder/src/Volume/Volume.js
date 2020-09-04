@@ -8,21 +8,21 @@ class Volume extends Component {
   }
 
   render() {
-    console.log("Image Links: ", this.props.item.volumeInfo.imageLinks);
+    console.log(
+      "Image Links: ",
+      this.props.item.volumeInfo?.imageLinks?.thumbnail
+    );
 
-    // const imageLinks = this.props.item.volumeInfo.imageLinks;
-
-    // if ("thumbnail" in imageLinks) {
-    //   const thumbnailImage = imageLinks.thumbnail;
-    //   const url = <img alt="book cover">{thumbnailImage}</img>;
-    //   return url;
-    // }
+    const url = this.props.item.volumeInfo?.imageLinks?.thumbnail;
 
     const itemNumber = this.props.itemNumber + 1;
 
     return (
       <div className="volume">
-        <b>{itemNumber}.</b>
+        {!!url && <img alt="cover" src={url} />}
+        <p>
+          <b>{itemNumber}.</b>
+        </p>
         <p key={this.props.index}>
           <b>Title:</b> {this.props.item.volumeInfo.title}
         </p>
