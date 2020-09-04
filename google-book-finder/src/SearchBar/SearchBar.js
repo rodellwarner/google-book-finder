@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import "./SearchBar.css";
+import PrintType from "../PrintType/PrintType";
 
 class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
       searchTerm: "",
+      searchPrintType: "All",
     };
   }
 
@@ -15,12 +17,19 @@ class SearchBar extends Component {
     });
   }
 
+  searchPrintTypeChanged(newSearchPrintType) {
+    this.setState({
+      searchPrintType: newSearchPrintType,
+    });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
 
     const url =
       "https://www.googleapis.com/books/v1/volumes?q=" +
-      `${this.state.searchTerm}`;
+      `${this.state.searchTerm}` +
+      `&printType=${this.state.searchPrintType}`;
     const options = {
       method: "GET",
       headers: {
@@ -53,6 +62,11 @@ class SearchBar extends Component {
             Search
           </button>
         </form>
+        <PrintType
+          handleChangePrintType={(newPrintType) =>
+            this.searchPrintTypeChanged(newPrintType)
+          }
+        />
       </div>
     );
   }

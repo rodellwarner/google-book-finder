@@ -2,18 +2,10 @@ import React, { Component } from "react";
 import "./Volume.css";
 
 class Volume extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { objectContainingThumbnail: [] };
-  }
-
   render() {
-    console.log(
-      "Image Links: ",
-      this.props.item.volumeInfo?.imageLinks?.thumbnail
-    );
-
     const url = this.props.item.volumeInfo?.imageLinks?.thumbnail;
+    const description = this.props.item.volumeInfo?.description;
+    const author = this.props.item.volumeInfo?.authors;
 
     const itemNumber = this.props.itemNumber + 1;
 
@@ -27,10 +19,10 @@ class Volume extends Component {
           <b>Title:</b> {this.props.item.volumeInfo.title}
         </p>
         <p>
-          <b>Author:</b> {this.props.item.volumeInfo.authors}
+          {!!author && <b>Author:</b>} {author}
         </p>
         <p>
-          <b>Description:</b> {this.props.item.volumeInfo.description}
+          {!!description && <b>Description:</b>} {description}
         </p>
       </div>
     );

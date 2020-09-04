@@ -1,0 +1,14 @@
+.printType {
+  margin: auto;
+  padding-top: 20px;
+}
+
+#selectPrintTypeLabel {
+  color: white;
+  padding-right: 10px;
+}
+
+#selectPrintType {
+  border: none;
+  border-radius: 5px;
+}
