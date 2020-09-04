@@ -6,6 +6,8 @@ class Results extends Component {
   render() {
     const restultsToDisplay = <ListOfVolumes results={this.props.results} />;
 
+    console.log(restultsToDisplay);
+
     return <div className="results">{restultsToDisplay}</div>;
   }
 }
