@@ -18,8 +18,11 @@ class Volume extends Component {
     //   return url;
     // }
 
+    const itemNumber = this.props.itemNumber + 1;
+
     return (
       <div className="volume">
+        <b>{itemNumber}.</b>
         <p key={this.props.index}>
           <b>Title:</b> {this.props.item.volumeInfo.title}
         </p>
