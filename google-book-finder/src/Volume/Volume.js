@@ -6,8 +6,11 @@ class Volume extends Component {
     const url = this.props.item.volumeInfo?.imageLinks?.thumbnail;
     const description = this.props.item.volumeInfo?.description;
     const author = this.props.item.volumeInfo?.authors;
+    const preview = this.props.item.volumeInfo?.previewLink;
 
     const itemNumber = this.props.itemNumber + 1;
+
+    console.log(preview);
 
     return (
       <div className="volume">
@@ -24,6 +27,11 @@ class Volume extends Component {
         <p>
           {!!description && <b>Description:</b>} {description}
         </p>
+        {!!preview && (
+          <a href={preview} target="_blank" rel="noopener noreferrer">
+            <button className="previewButton">Preview</button>
+          </a>
+        )}
       </div>
     );
   }
